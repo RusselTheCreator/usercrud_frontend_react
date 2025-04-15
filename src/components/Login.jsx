@@ -1,6 +1,6 @@
 // src/pages/Login.jsx
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'; // import react hooks
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 // Create the Login component
 const Login = () => 
@@ -14,8 +14,9 @@ const Login = () =>
    const handleLoginFormSubmit = async e => {
       e.preventDefault(); // Prevent page reload on form submit
 
-      // Send login request to the server
-      const res = await fetch('https://your-api.onrender.com/api/auth/login', {
+      // Send login request to the API server
+      // Make API request to the API server
+      const res = await fetch('https://usercrud-api-ef8r.onrender.com/api/authentication/login', {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({ email, password }),
@@ -26,7 +27,7 @@ const Login = () =>
       // If login is successful, store the token in local storage and redirect to the users page
       if(res.ok) 
       {
-         localStorage.setItem('token', data.token); // Store the token in local storage
+         localStorage.setItem('jwtToken', data.jwtToken); // Store the token in local storage
          navigate('/users'); // Redirect to the users page
       } 
       else 

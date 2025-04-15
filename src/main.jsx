@@ -1,6 +1,6 @@
 import React from 'react' // Import the React library
 import ReactDOM from 'react-dom/client' // Import the ReactDOM library
-import App from './App.jsx' // Import the App component
+import App from './App.jsx' // Import the App component // Controls which page to show based on the URL
 import { BrowserRouter } from 'react-router-dom' // Import the BrowserRouter component
 import 'bootstrap/dist/css/bootstrap.min.css' // Import the Bootstrap module
 
